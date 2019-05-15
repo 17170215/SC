@@ -21,7 +21,7 @@ class SalaryCalcTest {
     void calcSalary1() throws Exception {
         testingClass.arrTf[1].setText("228");
         testingClass.arrTf[2].setText("5");
-        testingClass.arРrTf[3].setText("13");
+        testingClass.arrTf[3].setText("13");
         testingClass.arrTf[4].setText("37");
         testingClass.calcSalary();
         assertEquals("10270,26", testingClass.arrTf[9].getText());
