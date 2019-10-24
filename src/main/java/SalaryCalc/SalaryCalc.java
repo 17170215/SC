@@ -50,7 +50,12 @@ public class SalaryCalc implements ActionListener{
         //устанавливаем  размер 130 на 300 пикселей
         panelRight.setPreferredSize(new Dimension(130,300));
         
+
+        
         //добавлям метки через метод addLabel
+        JLabel top = new JLabel("Красные поля являются обязательными для заполнения");
+        top.setForeground(Color.BLACK);
+        
         addLabel(panelLeft, "Ф.И.О.:", Color.RED);
         addLabel(panelLeft, "Тарифная ставка (в час):", Color.RED);
         addLabel(panelLeft, "Рабочий день (часы):", Color.RED);
@@ -62,12 +67,39 @@ public class SalaryCalc implements ActionListener{
         addLabel(panelLeft, "Подоходный налог:", Color.GREEN);
         addLabel(panelLeft, "Сумма к выдаче:", Color.GREEN);
         
-        //добавляем текстовые поля через цикл и записываем их в массив
-        for(int i=0; i<arrTf.length; i++){
-            //записываем ссылку из метода в массив для дальнейшей работы с 
-            //тестовым поелм
-            arrTf[i] = addTextField(panelRight);
-        }
+        arrTf[0] = addTextField(panelRight);
+        arrTf[1] = addTextField(panelRight);
+        arrTf[2] = addTextField(panelRight);
+        arrTf[3] = addTextField(panelRight);
+        arrTf[4] = addTextField(panelRight);
+        arrTf[5] = addTextField(panelRight);
+        arrTf[6] = addTextField(panelRight);
+        arrTf[7] = addTextField(panelRight);
+        arrTf[8] = addTextField(panelRight);
+        arrTf[9] = addTextField(panelRight);
+        
+        arrTf[0].setBackground(Color.WHITE);
+        arrTf[1].setBackground(Color.WHITE);
+        arrTf[2].setBackground(Color.WHITE);
+        arrTf[3].setBackground(Color.WHITE);
+        arrTf[4].setBackground(Color.WHITE);
+        arrTf[5].setBackground(Color.WHITE);
+        arrTf[6].setBackground(Color.WHITE);
+        arrTf[7].setBackground(Color.WHITE);
+        arrTf[8].setBackground(Color.WHITE);
+        arrTf[9].setBackground(Color.WHITE);
+        
+        arrTf[0].setForeground(Color.BLACK);
+        arrTf[1].setForeground(Color.BLACK);
+        arrTf[2].setForeground(Color.BLACK);
+        arrTf[3].setForeground(Color.BLACK);
+        arrTf[4].setForeground(Color.BLACK);
+        arrTf[5].setForeground(Color.BLACK);
+        arrTf[6].setForeground(Color.BLACK);
+        arrTf[7].setForeground(Color.BLACK);
+        arrTf[8].setForeground(Color.BLACK);
+        arrTf[9].setForeground(Color.GREEN);
+        
         
         //добавляем кнопки расчета и сброса
         JButton calc = addButton(panelBottom, "Расчет");
@@ -77,6 +109,14 @@ public class SalaryCalc implements ActionListener{
         //добавляем слушатель на событие нажатия
         reset.addActionListener(this);
         
+        calc.setBackground(Color.WHITE);
+        reset.setBackground(Color.WHITE);
+        calc.setForeground(Color.BLACK);
+        reset.setForeground(Color.BLACK);
+        
+//        panelLeft.setBackground(Color.WHITE);
+        panelRight.setBackground(Color.BLACK);
+//        panelBottom.setBackground(Color.YELLOW);
         
         //делаем главную форму видимой
         frame.setVisible(true);
@@ -87,11 +127,11 @@ public class SalaryCalc implements ActionListener{
         //Устанавливаем размер главного окна(400 на 285)
         frame.setSize(400,285);
         //Добавляем метку с информацией к работе в самый верх окна
-        JLabel top = new JLabel("Красные поля являются обязательными для заполнения");
         //устанавливаем выравнивание текста в метке по центру
+        
         top.setHorizontalAlignment(JLabel.CENTER);
         
-        //добавляем панели на клавное окно
+        //добавляем панели на главное окно
         frame.add(top, BorderLayout.NORTH);
         frame.add(panelLeft, BorderLayout.WEST);
         frame.add(panelRight, BorderLayout.EAST);
@@ -117,6 +157,11 @@ public class SalaryCalc implements ActionListener{
         container.add(lb);
     }
     
+  private void setOraque(boolean b) {
+	  setOraque(true);
+	}
+
+
     //метод добавления текстовых полей
     public JTextField addTextField(JComponent container){
         //Создаем текстовое поле
@@ -194,5 +239,3 @@ public class SalaryCalc implements ActionListener{
         }
         
     }
-    
-
