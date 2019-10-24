@@ -51,17 +51,31 @@ public class SalaryCalcjunior implements ActionListener{
         panelRight.setPreferredSize(new Dimension(130,300));
         
         //добавлям метки через метод addLabel
+        JLabel top = new JLabel("Красные поля являются обязательными для заполнения");
+        top.setForeground(Color.BLACK);
+        
         addLabel(panelLeft, "Тарифная ставка (в час):", Color.RED);
         addLabel(panelLeft, "Рабочий день (часы):", Color.RED);
         addLabel(panelLeft, "Количество отработанных дней:", Color.RED);
         addLabel(panelLeft, "Промежуточная зарплата:", Color.BLUE);
         
-        //добавляем текстовые поля через цикл и записываем их в массив
-        for(int i=0; i<arrTf.length; i++){
-            //записываем ссылку из метода в массив для дальнейшей работы с 
-            //тестовым поелм
-            arrTf[i] = addTextField(panelRight);
-        }
+        arrTf[0] = addTextField(panelRight);
+        arrTf[1] = addTextField(panelRight);
+        arrTf[2] = addTextField(panelRight);
+        arrTf[3] = addTextField(panelRight);
+        
+        arrTf[0].setBackground(Color.WHITE);
+        arrTf[1].setBackground(Color.WHITE);
+        arrTf[2].setBackground(Color.WHITE);
+        arrTf[3].setBackground(Color.WHITE);
+        
+        arrTf[0].setForeground(Color.BLACK);
+        arrTf[1].setForeground(Color.BLACK);
+        arrTf[2].setForeground(Color.BLACK);
+        arrTf[3].setForeground(Color.BLACK);
+        
+        panelLeft.setBackground(Color.WHITE);
+//        panelBottom.setBackground(Color.WHITE);
         
         //добавляем кнопки расчета и сброса
         JButton calc = addButton(panelBottom, "Расчет");
@@ -71,6 +85,10 @@ public class SalaryCalcjunior implements ActionListener{
         //добавляем слушатель на событие нажатия
         reset.addActionListener(this);
         
+        calc.setBackground(Color.WHITE);
+        reset.setBackground(Color.WHITE);
+        calc.setForeground(Color.BLACK);
+        reset.setForeground(Color.BLACK);
         
         //делаем главную форму видимой
         frame.setVisible(true);
@@ -81,9 +99,9 @@ public class SalaryCalcjunior implements ActionListener{
         //Устанавливаем размер главного окна(400 на 180)
         frame.setSize(400,180);
         //Добавляем метку с информацией к работе в самый верх окна
-        JLabel top = new JLabel("Красные поля являются обязательными для заполнения");
         //устанавливаем выравнивание текста в метке по центру
         top.setHorizontalAlignment(JLabel.CENTER);
+        
         
         //добавляем панели на клавное окно
         frame.add(top, BorderLayout.NORTH);
@@ -179,4 +197,3 @@ public class SalaryCalcjunior implements ActionListener{
         
     }
     
-
