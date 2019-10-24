@@ -24,11 +24,22 @@ public class MainFrame extends JFrame {
 		this.setLocationRelativeTo(null); //разместить по середине экрана форму frame 
 
 		// Установка размеров окна и расположение элементов:
-		  setSize(250, 125); 
-		  panel.setBackground(new Color(255,255,255));   
-		  panel.setLayout(new FlowLayout()); 
-		  exitButton.setBackground(new Color(255,190,210)); 
-		
+		  setSize(250, 125);//Размер главного окна
+
+			
+		  panel.setLayout(new FlowLayout());// Метод расположения кнопок
+		  
+		  panel.setBackground(Color.WHITE);// Фон главного окна
+		  
+		  byxgalterButton.setBackground(Color.GREEN);// Фон кнопки БУХГАЛТЕР
+		  rabot9gaButton.setBackground(Color.GREEN);// Фон кнопки СОТРУДНИК
+		  exitButton.setBackground(Color.RED);// Фон кнопки ВЫХОД
+		  
+		  label.setForeground(Color.BLACK);//Цвет шрифта ВЫБЕРИТЕ ПОЛЬЗОВАТЕЛЯ
+		  byxgalterButton.setForeground(Color.BLACK);//Цвет шрифта БУХГАЛТЕР
+		  rabot9gaButton.setForeground(Color.BLACK);//Цвет шрифта СОТРУДНИК
+		  exitButton.setForeground(Color.BLACK);//Цвет шрифта ВЫХОД
+		  
           panel.add(label);
           panel.add(byxgalterButton); 
           panel.add(rabot9gaButton);
@@ -47,11 +58,43 @@ public class MainFrame extends JFrame {
           });
 			
 
-	exitButton.addActionListener(new ActionListener() {
+/*	exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 				}
-		});
+		});*/
+          
+         class CustomListener implements MouseListener {
+        	  
+              public void mouseClicked(MouseEvent e) {
+                   JButton exitButton = (JButton) e.getSource();
+                   String text = "<html><b>" + exitButton.getText()
+                             + " mouseReleased() <br>" + exitButton.getText()
+                             + " mouseClicked() </b><html>";
+                   label.setText(text);
+              }
+     
+              public void mouseEntered(MouseEvent e) {
+                   JButton exitButton = (JButton) e.getSource();
+                   label.setText(exitButton.getText() + " mouseEntered()");
+              }
+     
+              public void mouseExited(MouseEvent e) {
+                   JButton exitButton = (JButton) e.getSource();
+                   label.setText(exitButton.getText() + " mouseExited()");
+              }
+     
+              public void mousePressed(MouseEvent e) {
+                   JButton exitButton = (JButton) e.getSource();
+                   label.setText(exitButton.getText() + " mousePressed()");
+              }
+     
+              public void mouseReleased(MouseEvent e) {
+                   JButton exitButton = (JButton) e.getSource();
+                   label.setText(exitButton.getText() + " mouseReleased()");
+              }
+         }
+          
 	}
 	public static void main(String[] args) {
 		// Создаем объект класса Counter (калькулятора):
