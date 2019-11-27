@@ -58,42 +58,11 @@ public class MainFrame extends JFrame {
           });
 			
 
-/*	exitButton.addActionListener(new ActionListener() {
+	exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 				}
-		});*/
-          
-         class CustomListener implements MouseListener {
-        	  
-              public void mouseClicked(MouseEvent e) {
-                   JButton exitButton = (JButton) e.getSource();
-                   String text = "<html><b>" + exitButton.getText()
-                             + " mouseReleased() <br>" + exitButton.getText()
-                             + " mouseClicked() </b><html>";
-                   label.setText(text);
-              }
-     
-              public void mouseEntered(MouseEvent e) {
-                   JButton exitButton = (JButton) e.getSource();
-                   label.setText(exitButton.getText() + " mouseEntered()");
-              }
-     
-              public void mouseExited(MouseEvent e) {
-                   JButton exitButton = (JButton) e.getSource();
-                   label.setText(exitButton.getText() + " mouseExited()");
-              }
-     
-              public void mousePressed(MouseEvent e) {
-                   JButton exitButton = (JButton) e.getSource();
-                   label.setText(exitButton.getText() + " mousePressed()");
-              }
-     
-              public void mouseReleased(MouseEvent e) {
-                   JButton exitButton = (JButton) e.getSource();
-                   label.setText(exitButton.getText() + " mouseReleased()");
-              }
-         }
+		});
           
 	}
 	public static void main(String[] args) {
